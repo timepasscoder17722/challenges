@@ -1,18 +1,19 @@
 #include<iostream>
 #include<vector>
 #include"helper.h"
-#include"insertionsort.h"
-using std::cout;
-using std::cin;
+#include"quicksort.h"
+
+void test(){
+  int length; std::cin>>length;
+  std::vector<int> vec; setVec(vec, length);
+  printVec(vec);
+  quicksort(vec, 0, vec.size()-1);
+  printVec(vec);
+}
 
 int main(){
-  int n; cin>>n;
-  std::vector<int> vec;
-  while(n--){
-    int value; cin>>value;
-    vec.push_back(value);
+  int T; std::cin>>T;
+  while(T--){
+    test();
   }
-  printVec(vec);
-  insertionsort(vec);
-  printVec(vec);
 }
